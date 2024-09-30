@@ -97,3 +97,17 @@ jobs:
       with:
         name: AnyKernel3-${{ inputs.version_name }}_${{ inputs.os_patch_level }}
         path: ./AnyKernel3/*
+    - name: Release
+            id: create-release
+            uses: softprops/action-gh-release@v1
+            env:
+               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            with:
+               tag_name: 123456
+               name: Android-Lxc-ksu-Kernel-5.10
+               body: Android-Lxc-ksu-Kernel-5.10.
+               draft: false
+               prerelease: false
+               files: |
+                 ./output/*
+                 ./AnyKernel3/*
