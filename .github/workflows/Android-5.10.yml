@@ -97,6 +97,7 @@ jobs:
       with:
         name: AnyKernel3-${{ inputs.version_name }}_${{ inputs.os_patch_level }}
         path: ./AnyKernel3/*
+
     - name: Release
             id: create-release
             uses: softprops/action-gh-release@v1
